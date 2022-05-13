@@ -1,0 +1,130 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+    *, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+} 
+
+body {
+    background: gainsboro;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    border: 1px solid slateblue;
+}
+
+.container > input {
+	display: none;
+}
+
+.slider-block {
+    margin: 0 auto;
+	background-color: khaki;
+    width: 960px;
+    height: 720px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    border: 1px solid red;
+}
+
+.controls-block {
+    margin: 20px auto;
+    background-color: khaki;
+	overflow: hidden;
+	position: relative;
+    width: 960px;
+    height: 100px;
+    border: 1px solid purple;
+}
+
+.sliders {
+	height: inherit;
+	position: absolute;
+	width: inherit;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.slider1 {
+    background-image: url('./assets/images/01.jpg');
+}
+.slider2 {
+    background-image: url('./assets/images/02.jpg');
+}
+.slider3 {
+    background-image: url('./assets/images/03.jpg');
+}
+.slider4 {
+    background-image: url('./assets/images/04.jpg');
+}
+.slider5 {
+    background-image: url('./assets/images/05.jpg');
+}
+
+.controls-block {
+    display: flex;
+}
+
+.content {
+    width: 70%;
+    border: 1px solid firebrick;
+}
+
+
+.controls {
+    right: 0;
+    width: 30%;
+	position: absolute;
+    border: 1px solid green;
+    text-align: right;
+}
+
+.controls-block label {
+	cursor: pointer;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+    margin: 10px;
+	position: relative;
+	border-radius: 50%;
+}
+
+.controls-block label:after {
+	border: 3px solid blue;
+	content: " ";
+	display: block;
+	height: 20px;
+	position: absolute;
+	width: 20px;
+	border-radius: 50%;
+}
+
+.controls label {
+	cursor: pointer;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+    margin: 10px;
+	position: relative;
+	border-radius: 50%;
+	transition: background ease-in-out .5s;
+}
+
+.controls label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+	background: blue;
+}
